@@ -1,0 +1,2 @@
+content	tinted-sheen	content/
+overlay	chrome://browser/content/browser.xul	chrome://tinted-sheen/content/overlay.xul

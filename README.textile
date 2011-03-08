@@ -1,0 +1,31 @@
+h1. Tinted Sheen
+
+Firefox Add-on, Chrome Extension, and inline code to cure that #winning Charlie Sheen hangover.
+
+by Greg Leuch ("@gleuch":http://twitter.com/gleuch | "http://gleuch.com":http://gleuch.com)
+
+
+h2. Install
+
+Current version is at *1.0.0*.
+
+  * "Firefox 1.0.0 download":http://addons.gleuch.com/tinted-sheen/downloads/firefox
+  * "Chrome 1.0.0 download":http://addons.gleuch.com/tinted-sheen/downloads/chrome
+
+
+h2. Credits
+
+Based on the "Shaved Bieber":http://github.com/gleuch/shaved-bieber and "Ctrl+F'd":http://github.com/gleuch/ctrl-f-d projects by "Greg Leuch":http://www.gleuch.com.
+Special thanks to "Chris Menning":http://twitter.com/straythenomad" and the FAT Lab crew":http://fffff.at!
+
+
+h2. License
+
+MIT License "http://creativecommons.org/licenses/MIT":http://creativecommons.org/licenses/MIT. Not for commercial use.
+
+
+h2. Changelog
+
+h4. 1.0.0 (8 Mar 2011)
+
+Created from "Shaved Bieber":http://fffff.at/shaved-bieber project, tested, released on "FAT Lab":http://fffff.at/tinted-sheen for Firefox & Chrome.

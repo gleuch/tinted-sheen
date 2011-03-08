@@ -1,0 +1,21 @@
+{
+   "background_page": "tinted-sheen.html",
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "jquery-latest.js" ],
+      "matches": [ "http://*/*" ],
+      "run_at": "document_start"
+   } ],
+   "description": "The cure for your #winning Charlie Sheen hangover.",
+   "icons": {
+      "16": "tinted-sheen16.png",
+      "32": "tinted-sheen32.png",
+      "48": "tinted-sheen48.png",
+      "64": "tinted-sheen64.png",
+      "128": "tinted-sheen128.png"
+   },
+   "name": "Tinted Sheen Blocker",
+   "permissions": [ "tabs", "http://*/*" ],
+   "update_url": "http://addons.gleuch.com/tinted-sheen/updates/chrome?data=",
+   "version": "1.0.0"
+}

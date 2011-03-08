@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+ xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>tinted-sheen@gleuch.com</em:id>
+    <em:name>Tinted Sheen Blocker</em:name>
+    <em:version>1.0.0</em:version>
+    <!--
+    <em:updateURL>http://addons.gleuch.com/tinted-sheen/updates/firefox</em:updateURL>
+    <em:updateInfoURL>http://addons.gleuch.com/tinted-sheen/updates/firefox/info</em:updateInfoURL>
+    <em:updateKey></em:updateKey>
+    -->
+
+    <em:creator>Greg Leuch</em:creator>
+    <em:contributor>Greg Leuch</em:contributor>
+    <em:description>The cure for your #winning Charlie Sheen hangover.</em:description>
+    <em:homepageURL>http://gleuch.com/projects/tinted-sheen</em:homepageURL>
+    <em:iconURL>chrome://tinted-sheen/content/tinted-sheen64.png</em:iconURL>
+
+    <em:targetApplication>
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- firefox -->
+        <em:minVersion>3.5.*</em:minVersion>
+        <em:maxVersion>4.0b12</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+  </Description>
+</RDF>

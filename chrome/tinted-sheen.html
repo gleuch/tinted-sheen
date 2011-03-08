@@ -1,0 +1,21 @@
+<html><head>
+<script>
+
+function selectedTab(tab) {
+  var detailsObj = new Object();
+  detailsObj.file = "tinted-sheen.js";
+  chrome.tabs.executeScript(tab.id, detailsObj, function(){});
+}
+
+function onUpdatedTab(tabid, objectinfo, tab) {
+  var targettab = tab;
+  // if (tab.url.indexOf("facebook") > -1) return;
+  setTimeout(function() { selectedTab(tab);}, 1000); 
+}
+
+function pageOnClicked(tab) {}
+
+chrome.tabs.onUpdated.addListener(onUpdatedTab);
+
+</script>
+</head><body></body></html>
