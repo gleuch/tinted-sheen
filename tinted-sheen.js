@@ -44,7 +44,7 @@ function tinted_sheen_start($_) {
     };
 
     $_.extend($_.tinted_sheen, {
-      settings : {hide_bg : true, search: /(charlie(\s|\-|\_)?)?(sheen|porn\sfamily|\#winning|\#tigerblood)/img, replace: '<span class="tinted_sheen" style="color: %C; background-color: %C;">$1$2$3$4$5</span>', starred: '****** ******', init : false, finish : false},
+      settings : {hide_bg : true, search: /(charlie(\s|\-|\_)?)?(sheen|porn\sfamily|\#winning|\#tigerblood|tiger\sblood|adonis\sdna|\#sheenskorner|sheen\'s\skorner|\#fastball)/img, replace: '<span class="tinted_sheen" style="color: %C; background-color: %C;">$1$2$3</span>', starred: '****** ******', init : false, finish : false},
 
       pluck : function(str) {return str.replace(/(charlie\s)(sheen)/img, '****** ******').replace(/(sheen|\#winning)/img, '******');},
 

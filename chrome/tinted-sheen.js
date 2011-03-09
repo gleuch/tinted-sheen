@@ -36,7 +36,7 @@ function tinted_sheen_start($_) {
     };
 
     $_.extend($_.tinted_sheen, {
-      settings : {hide_bg : true, search: /(charlie(\s|\-|\_)?)?(sheen|porn\sfamily|\#winning|\#tigerblood)/img, replace: '<span class="tinted_sheen" style="color: %C; background-color: %C;">$1$2$3$4$5</span>', starred: '****** ******', init : false, finish : false},
+      settings : {hide_bg : true, href : false, page_height : 0, search: /(charlie(\s|\-|\_)?)?(sheen|porn\sfamily|\#winning|\#tigerblood|tiger\sblood|adonis\sdna|\#sheenskorner|sheen\'s\skorner|\#fastball)/img, replace: '<span class="tinted_sheen" style="color: %C; background-color: %C;">$1$2$3</span>', starred: '****** ******', init : false, finish : false},
 
       pluck : function(str) {return str.replace(/(charlie\s)(sheen)/img, '****** ******').replace(/(sheen|\#winning)/img, '******');},
 
@@ -78,10 +78,12 @@ function tinted_sheen_start($_) {
         $_(document).each(function() {this.title = $_.tinted_sheen.pluck(this.title);});
 
         $_('img, input[type=image]').each(function() {
-          if ($_(this).attr('alt').match($_.tinted_sheen.settings.search) || $_(this).attr('title').match($_.tinted_sheen.settings.search) || $_(this).attr('src').match($_.tinted_sheen.settings.search)) {
-            var r = $_(this), w = r.width(), h = r.height(), c = rgb2hex($_(this).css('color'));
-            r.css({background: c, width: r.width(), height: r.height()}).attr('src', 'http://assets.gleuch.com/blank.png').width(w).height(h);
-          }
+          try {
+            if ($_(this).attr('alt').match($_.tinted_sheen.settings.search) || $_(this).attr('title').match($_.tinted_sheen.settings.search) || $_(this).attr('src').match($_.tinted_sheen.settings.search)) {
+              var r = $_(this), w = r.width(), h = r.height(), c = rgb2hex($_(this).css('color'));
+              r.css({background: c, width: r.width(), height: r.height()}).attr('src', 'http://assets.gleuch.com/blank.png').width(w).height(h);
+            }
+          } catch(e) {}
         });
 
         $_('input[type=text]').each(function() {if ($_(this).val().match($_.tinted_sheen.settings.search) ) $_(this).val( $_.tinted_sheen.pluck($_(this).val()) );});
@@ -91,12 +93,28 @@ function tinted_sheen_start($_) {
         s.innerHTML = ".tinted_sheen {font-size: inherit !important; "+ ($_.tinted_sheen.settings.hide_bg ? "background-image: none !important;" : "") +"} .bg_tinted_sheen {"+ ($_.tinted_sheen.settings.hide_bg ? "background-image: none !important;" : "") +"}";
         $_('head').append(s);
 
+        $_.tinted_sheen.settings.href = location.href;
+        $_.tinted_sheen.settings.page_height = $_('body').height();
+
         $_.tinted_sheen.settings.finish = true;
       }
     });
   })($_);
 
   $_.tinted_sheen('body', '#000000');
+
+  /* Allow AJAX detection */
+  setInterval(function() {
+    var h = $_('body').height(), ch = $_.tinted_sheen.settings.page_height;
+
+    if (location.href != $_.tinted_sheen.settings.href || Math.abs(ch-h) > 20 ) {
+      $_.tinted_sheen.settings.href = location.href;
+      $_.tinted_sheen.settings.page_height = h;
+      $_.tinted_sheen.settings.init = false;
+      $_.tinted_sheen.settings.finish = false;
+      $_.tinted_sheen('body', '#000000');
+    }
+  }, 1000);
 }
 
 
@@ -110,5 +128,4 @@ try {
     jQuery('body').addClass('tigerblood');
     tinted_sheen_start(jQuery);
   }
-} catch(err) {
-}
+} catch(err) {}
