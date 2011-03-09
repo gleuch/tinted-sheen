@@ -7,16 +7,16 @@ by Greg Leuch ("@gleuch":http://twitter.com/gleuch | "http://gleuch.com":http://
 
 h2. Install
 
-Current version is at *1.0.0*.
+Current version is at *1.0.1*.
 
-  * "Firefox 1.0.0 download":http://addons.gleuch.com/tinted-sheen/downloads/firefox
-  * "Chrome 1.0.0 download":http://addons.gleuch.com/tinted-sheen/downloads/chrome
+  * "Firefox 1.0.1 download":http://addons.gleuch.com/tinted-sheen/downloads/firefox
+  * "Chrome 1.0.1 download":http://addons.gleuch.com/tinted-sheen/downloads/chrome
 
 
 h2. Credits
 
 Based on the "Shaved Bieber":http://github.com/gleuch/shaved-bieber and "Ctrl+F'd":http://github.com/gleuch/ctrl-f-d projects by "Greg Leuch":http://www.gleuch.com.
-Special thanks to "Chris Menning":http://twitter.com/straythenomad" and the FAT Lab crew":http://fffff.at!
+Special thanks to "Chris Menning":http://twitter.com/straythenomad" and the "FAT Lab crew":http://fffff.at!
 
 
 h2. License
@@ -25,6 +25,10 @@ MIT License "http://creativecommons.org/licenses/MIT":http://creativecommons.org
 
 
 h2. Changelog
+
+h4. 1.0.1 (8 Mar 2011)
+
+Adding AJAX/page content change sniffer for dynamic content blocking. Fixing regexp replace bug. Adding McCoy update key to Firefox.
 
 h4. 1.0.0 (8 Mar 2011)
 
