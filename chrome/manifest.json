@@ -17,5 +17,5 @@
    "name": "Tinted Sheen Blocker",
    "permissions": [ "tabs", "http://*/*" ],
    "update_url": "http://addons.gleuch.com/tinted-sheen/updates/chrome?data=",
-   "version": "1.0.1"
+   "version": "1.0.2"
 }

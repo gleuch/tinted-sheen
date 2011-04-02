@@ -4,7 +4,7 @@
   <Description about="urn:mozilla:install-manifest">
     <em:id>tinted-sheen@gleuch.com</em:id>
     <em:name>Tinted Sheen Blocker</em:name>
-    <em:version>1.0.1</em:version>
+    <em:version>1.0.2</em:version>
     <em:updateURL>http://addons.gleuch.com/tinted-sheen/updates/firefox</em:updateURL>
     <em:updateInfoURL>http://addons.gleuch.com/tinted-sheen/updates/firefox/info</em:updateInfoURL>
     <em:updateKey>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDdaXt5MaiB3DdpsEhTagj5H/2Pd20zocVS1n/86uYswWF6pWxgx2X8fBkeujA6dmN0UIWVrLZLTFWwh6gQjsvpzxWMynRVkkx2JbMK0uuilaL6EO+MW6RNcHbLJrN2CCrYMwjTre/gruCWK63k/6wE4I2LT/O/vsmyobfYqvQ3CQIDAQAB</em:updateKey>

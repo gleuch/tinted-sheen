@@ -36,14 +36,14 @@ function tinted_sheen_start($_) {
     };
 
     $_.extend($_.tinted_sheen, {
-      settings : {hide_bg : true, href : false, page_height : 0, search: /(charlie(\s|\-|\_)?)?(sheen|porn\sfamily|\#winning|\#tigerblood|tiger\sblood|adonis\sdna|\#sheenskorner|sheen\'s\skorner|\#fastball)/img, replace: '<span class="tinted_sheen" style="color: %C; background-color: %C;">$1$2$3</span>', starred: '****** ******', init : false, finish : false},
+      settings : {hide_bg : true, href : false, page_height : 0, search: /(charlie(\s|\-|\_)?)?(sheen|sheen\'s|porn\sfamily|\#winning|\#tigerblood|tiger\sblood|adonis\sdna|\#sheenskorner|sheen\'s\skorner|\#fastball)/img, replace: '<span class="tinted_sheen" style="color: %C; background-color: %C;">a$1$2$3</span>', starred: '****** ******', init : false, finish : false},
 
       pluck : function(str) {return str.replace(/(charlie\s)(sheen)/img, '****** ******').replace(/(sheen|\#winning)/img, '******');},
 
       filter : function(self) {
         if (self.nodeType == 1) {
           var tag = self.tagName.toLowerCase();
-          return !(self.className.match('tinted_sheen') || tag == 'head' || tag == 'img' || tag == 'textarea' || tag == 'option' || tag == 'style' || tag == 'script');
+          return !(self.className.match('tinted_sheen') || tag == 'head' || tag == 'img' || tag == 'textarea' || tag == 'option' || tag == 'style' || tag == 'script' || tag == 'code' || tag == 'samp');
         } else {
           return true;
         }
@@ -55,9 +55,8 @@ function tinted_sheen_start($_) {
         if (self.nodeType == 3) {
           if (self.nodeValue.replace(/\s/ig, '') != '') {
             if (!c) c = $_(self).parent() ? $_(self).parent().css('color') : '#000000';
-            text = self.nodeValue.replace($_.tinted_sheen.settings.search, $_.tinted_sheen.settings.replace.replace(/\%C/mg, c) );
-            $_(self).after(text);
-            self.nodeValue = '';
+            var text = $_(self).text().replace($_.tinted_sheen.settings.search, $_.tinted_sheen.settings.replace.replace(/\%C/mg, c));
+            $_(self).html(text);
           }
         } else if (self.nodeType == 1) {
           c = rgb2hex($_(self).css('color'));
